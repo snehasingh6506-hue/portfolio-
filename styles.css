@@ -8,13 +8,13 @@
 }
 
 html{
-    scroll-behavior: smooth;
+    overflow-x:hidden;
 }
 
 body{
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
 }
 
@@ -121,23 +121,37 @@ nav{
     transition: 0.2s linear;
 }
 
+.dropdown.open {
+    display: block;
+}   
+
+.dropdown .links{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}    
+
 .dropdown .links a{
     color: white;
-    display: flex;
     text-decoration: none;
-    justify-content: center;
     padding: 15px 0;
-    align-items: center;
-    transition: 0.2s linear;
 }
 
 .dropdown .links a:hover{
     background-color: rgb(109,67, 0);
 }
 
+.cancel{
+    color: white;
+    font-size: 25px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+
 section{
-    width: 100%;
-    height: 90vh;
+    min-height: 100vh;
+    padding: 60px 20px;
 }
 
 .main-container{
@@ -322,6 +336,14 @@ section{
         height: 2.5rem;
         font-size: 1.5rem;
     }
+
+    .cancel{
+        color: white;
+    }
+
+    .dropdown.open .cancel {
+    display: block;
+}
 
     .main-container .image{
         width: 80%;
