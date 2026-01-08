@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sneha Portfolio</title>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>  
 
@@ -39,9 +36,10 @@
         <div class="links">
             <a href="#">Home</a>
             <a href="#">About</a>
-            <a href="#">Contact Me</a>
             <a href="#">Internship</a>
             <a href="#">Projects</a>
+            <a href="#">Contact Me</a>
+            <i class="fa-solid fa-xmark cancel"></i>
         </div>
     </div>
 </nav>   
@@ -83,10 +81,24 @@
     AOS.init({ offset: 0 });
 </script>
 <script>
-    function hamburg() {
-        const navbar = document.querySelector(".dropdown");
-        navbar.classList.toggle("active");
-    }
+const menu = document.querySelector(".dropdown");
+const hamburg = document.querySelector(".hamburg");
+const cancel = document.querySelector(".cancel");
+const links = document.querySelectorAll(".dropdown a");
+
+hamburg.addEventListener("click", () => {
+    menu.classList.add("open");
+});
+
+cancel.addEventListener("click", () => {
+    menu.classList.remove("open");
+});
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("open");
+    });
+});
 </script>
 <section id="About">
     <h2 class="section-title">About</h2><br>
